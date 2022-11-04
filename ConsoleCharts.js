@@ -40,3 +40,8 @@ class ConsoleCharts {
         return a;
     }
 }
+
+// Exporting the class ConsoleCharts to be used in other files as a commonjs module
+/*
+module.exports = ConsoleCharts;
+*/
