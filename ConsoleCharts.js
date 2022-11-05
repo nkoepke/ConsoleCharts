@@ -2,7 +2,7 @@ class ConsoleCharts {
     constructor(data){
         this.data = data || [];
 	}
-    chart(options = { minHeight: false }){
+    chart(options = { minHeight: false, pattern: false }){
         let chart = "\n";
         let lines = [];
         let descY = 0;
@@ -24,7 +24,7 @@ class ConsoleCharts {
             options.minHeight = false;
         }
         for (let i = 0; i < lines.length; i++) {
-            lines[i] = lines[i] + " │" + (options.minHeight == true ? ("║") : "") + this.#repeatCharacter("█", (options.minHeight == true ? (this.data[i] - min) : this.data[i]));
+            lines[i] = lines[i] + " │" + (options.minHeight == true ? ("║") : "") + this.#repeatCharacter((options.pattern == true && i % 2 ? "▓" : "█"), (options.minHeight == true ? (this.data[i] - min) : this.data[i]));
             chart += lines[i] + "\n";
             if(i == lines.length - 1){
                 chart += this.#repeatCharacter(" ", descY) + " └" + this.#repeatCharacter("─", (options.minHeight == true ? (max - min + 1) : max));
@@ -40,8 +40,3 @@ class ConsoleCharts {
         return a;
     }
 }
-
-// Exporting the class ConsoleCharts to be used in other files as a commonjs module
-/*
-module.exports = ConsoleCharts;
-*/
