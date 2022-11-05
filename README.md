@@ -69,3 +69,6 @@ console.log(ch.chart(minHeight: true, pattern: ture));
  5 │║▓▓▓▓
    └─────────────────────
 ```
+
+#### Todo:
+- Sorting ASC & DESC
