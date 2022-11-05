@@ -14,7 +14,8 @@ class `ConsoleCharts` (data `array`)
 #### chart(options [optional] `object`)
 * Returns multiline string with a vertical bar chart
 * Param `options` is optional:
-  * `minHeight` `default false` The smallest value will be displayed starting by one step
+  * `minHeight` `default false` The smallest value will be displayed starting by one step.
+  * `pattern` `default false` Every second bar gets a different pattern.
 
 ## Preview
 
@@ -49,5 +50,22 @@ console.log(ch.chart({minHeight: true}));
 21 │║████████████████████
  2 │║█
  5 │║████
+   └─────────────────────
+```
+
+```js
+let ch = new ConsoleCharts([9, 4, 11, 3, 9, 21, 2, 5]);
+console.log(ch.chart(minHeight: true, pattern: ture));
+```
+
+```
+ 9 │║████████
+ 4 │║▓▓▓
+11 │║██████████
+ 3 │║▓▓
+ 9 │║████████
+21 │║▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+ 2 │║█
+ 5 │║▓▓▓▓
    └─────────────────────
 ```
