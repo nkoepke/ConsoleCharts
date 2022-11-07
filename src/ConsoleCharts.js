@@ -1,11 +1,21 @@
+/* It's a class that creates a chart in the console */
 class ConsoleCharts {
+    /**
+     * @param data - The data to be used for the chart. Array of numbers or array of objects with a label and value property.
+     */
     constructor(data){
         this.data = data || [];
 	}
+
+    /**
+     * It takes an array of numbers or objects with a value property and returns a chart
+     * @param [options] - An object that contains the following parameters:
+     * @returns A string.
+     */
     chart(options = { minHeight: false, pattern: false }){
         let chart = "\n";
         let lines = [];
-        let descY = 0;
+        let descY = 0; /* It's a variable that will be used to store the length of the longest label. */
         for (let i = 0; i < this.data.length; i++) {
             if(typeof this.data[i] === "object"){
                 if(descY < String(this.data[i].label).length){
@@ -62,9 +72,17 @@ class ConsoleCharts {
         }
         return chart;
     }
+    
+    /**
+     * It takes a character and a number, and returns a string of the character repeated the number of
+     * times
+     * @param c - The character to repeat
+     * @param n - the number of times to repeat the character
+     * @returns a string of the character c repeated n times.
+     */
     #repeatCharacter(c, n){
         let a = "";
-        for(let i = 0; i < n; i++){
+        for (let i = 0; i < n; i++){
             a += c;
         }
         return a;
