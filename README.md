@@ -1,5 +1,5 @@
 # ConsoleCharts
-Charts to display in a JavaScript Console. Input an Array with numbers like `[1, 4, 11, 3, 9, 0, 2, 5]` or objects `[{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}]`. Arrays of numbers will be converted into objects with the label of the index + 1.
+Charts to display in your console or terminal. Input an Array with numbers like `[1, 4, 11, 3, 9, 0, 2, 5]` or objects `[{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}]`. Arrays of numbers will be converted into objects with the label of the index + 1.
 
 ### ConsoleCharts class
 
