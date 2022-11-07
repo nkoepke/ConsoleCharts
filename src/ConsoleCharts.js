@@ -116,7 +116,7 @@ class ConsoleCharts {
                 return (order == "ASC" ? a - b : (order == "DESC" ? b - a : a - b));
             });
         }
-        return this.data;
+        return this;
     }
 
     /**
