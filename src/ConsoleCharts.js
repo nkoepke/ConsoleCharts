@@ -87,7 +87,23 @@ class ConsoleCharts {
             return chart;
         }
         else if(options.type === "barchart"){
-            console.log("Sorry! This chart type [" + options.type + "] is not yet available, but it will be available soon! Want to help? Go to nkoepke/ConsoleCharts on GitHub!");
+            // TODO
+            let chart = "";
+            let maxHeight = Math.max.apply(Math, this.data.map(function(o) { return o.value; }));
+            for(let i = 0; i < maxHeight; i++){
+                let ln = "";
+                for(let j = 0; j < this.data.length; j++){
+                    if(this.data[j].value > i){
+                        ln += (options.pattern == true && j % 2 ? "▓ " : "█ ");
+                    }
+                    else{
+                        ln += "  ";
+                    }
+                }
+                chart = " │" + ln + "\n" + chart;
+            }
+            chart += " └" + this.#repeatCharacter("─", this.data.length);
+            return chart;
         }
     }
 
