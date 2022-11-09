@@ -1,6 +1,8 @@
 # ConsoleCharts
 Charts to display in your console or terminal. Input an Array with numbers like `[1, 4, 11, 3, 9, 0, 2, 5]` or objects `[{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}]`. Arrays of numbers will be converted into objects with the label of the index + 1.
 
+**Please note: ConsoleCharts is not yet finished. This readme describes the features already working. There is more to come.**
+
 ### ConsoleCharts class
 
 class `ConsoleCharts` (data `array`)
@@ -137,4 +139,39 @@ console.log(obj.sort("ASC", "value").chart({ pattern: true }));
      Peaches │██████████ 10
 Strawberries │▓▓▓▓▓▓▓▓▓▓▓▓ 12
              └───────────────
+```
+
+## Work in progress
+* Regular barcharts -> usable but not fully ready. Some features are missing!
+```js
+let obj = new ConsoleCharts([{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}, {label: "Pears", value: 10}, {label: "Grapes", value: 4}, {label: "Pineapples", value: 5}, {label: "Strawberries", value: 12}, {label: "Watermelons", value: 3}, {label: "Mangos", value: 3}, {label: "Lemons", value: 6}, {label: "Limes", value: 4}, {label: "Peaches", value: 10}]);
+console.log(obj.chart({ type: "barchart", spaced: true, pattern: true}));
+```
+
+```
+ │            █
+ │            █
+ │      ▓     █         ▓
+ │      ▓     █         ▓
+ │    █ ▓     █         ▓
+ │  ▓ █ ▓     █         ▓
+ │  ▓ █ ▓     █     ▓   ▓
+ │█ ▓ █ ▓   ▓ █     ▓   ▓
+ │█ ▓ █ ▓ █ ▓ █     ▓ █ ▓
+ │█ ▓ █ ▓ █ ▓ █ ▓ █ ▓ █ ▓
+ │█ ▓ █ ▓ █ ▓ █ ▓ █ ▓ █ ▓
+ │█ ▓ █ ▓ █ ▓ █ ▓ █ ▓ █ ▓
+ └────────────────────────
+  Apples (5)
+    Oranges (7)
+      Bananas (8)
+        Pears (10)
+          Grapes (4)
+            Pineapples (5)
+              Strawberries (12)
+                Watermelons (3)
+                  Mangos (3)
+                    Lemons (6)
+                      Limes (4)
+                        Peaches (10)
 ```
