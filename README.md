@@ -1,5 +1,8 @@
 ![ConsoleCharts](https://github.com/nkoepke/ConsoleCharts/blob/main/images/chart.png?raw=true)
 
+[![GitHub latest commit](https://badgen.net/github/last-commit/nkoepke/ConsoleCharts/main)](https://GitHub.com/nkoepke/ConsoleCharts/commit/)
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg?logo=javascript)](https://www.javascript.com)
+
 # ConsoleCharts
 Charts to display in your console or terminal. Input an Array with numbers like `[1, 4, 11, 3, 9, 0, 2, 5]` or objects `[{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}]`. Arrays of numbers will be converted into objects with the label of the index + 1.
 
