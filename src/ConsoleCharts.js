@@ -26,9 +26,11 @@ class ConsoleCharts {
         options.pattern = options.pattern || false;
         options.type = options.type || "sideways-barchart";
         options.spaced = options.spaced || false;
+        options.showLabels = options.hideLabels || false;
         let chart = "\n";
         /* Option variants */
         if(options.type === "sideways-barchart"){
+            // SIDEWAYS BARCHART
             let lines = [];
             let descY = 0; /* It's a variable that will be used to store the length of the longest label. */
             for (let i = 0; i < this.data.length; i++) {
@@ -43,9 +45,12 @@ class ConsoleCharts {
                     }
                 }
             }
+            if(options.hideLabels == true){
+                descY = 0;
+            }
             for (let i = 0; i < this.data.length; i++) {
                 if(typeof this.data[i] === "object"){
-                    lines.push(this.#repeatCharacter(" ", descY - String(this.data[i].label).length) + this.data[i].label);
+                    lines.push(this.#repeatCharacter(" ", descY - String(this.data[i].label).length) + (options.hideLabels ? "" : this.data[i].label));
                 }
                 else{
                     lines.push(this.#repeatCharacter(" ", descY - String(i + 1).length) + (i + 1));
@@ -80,14 +85,19 @@ class ConsoleCharts {
                 else{
                     lines[i] = lines[i] + " │" + (options.minHeight == true ? ("║") : "") + this.#repeatCharacter((options.pattern == true && i % 2 ? "▓" : "█"), (options.minHeight == true ? (this.data[i] - min) : this.data[i])) + " " + this.data[i];
                 }
-                chart += lines[i] + "\n";
-                if(i == lines.length - 1){
-                    chart += this.#repeatCharacter(" ", descY) + " └" + this.#repeatCharacter("─", (options.minHeight == true ? (max - min + 1) : max));
-                }
             }
+            // Looping over lines to add spaced lines if needed and to add the lines to the chart
+            for(let i = 0; i < lines.length; i++){
+                if(options.spaced && i < lines.length - 1){
+                    lines[i] = lines[i] + "\n" + this.#repeatCharacter(" ", descY) + " │" ;
+                }
+                chart += lines[i] + "\n";
+            }
+            chart += this.#repeatCharacter(" ", descY) + " └" + this.#repeatCharacter("─", (options.minHeight == true ? (max - min + 1) : max));
             return chart;
         }
         else if(options.type === "barchart"){
+            // BARCHART
             let spaced = (options.spaced == true ? " " : "");
             let chart = "";
             let descX = "";
@@ -103,7 +113,9 @@ class ConsoleCharts {
                     }
                 }
                 chart = " │" + ln + "\n" + chart;
-                descX += this.#repeatCharacter((options.spaced ? "  " : " "), i + (options.spaced ? 1 : 2)) + this.data[i].label + " (" + this.data[i].value + ")" + "\n";
+                if(options.hideLabels != true){
+                    descX += this.#repeatCharacter((options.spaced ? "  " : " "), i + (options.spaced ? 1 : 2)) + this.data[i].label + " (" + this.data[i].value + ")" + "\n";
+                }
             }
             chart += " └" + this.#repeatCharacter((options.spaced ? "──" : "─"), this.data.length) + "  " + "\n" + descX;
             return chart;

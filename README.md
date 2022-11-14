@@ -25,6 +25,8 @@ class `ConsoleCharts` (data `array`)
 * Param `options` is optional:
   * `minHeight` `default false` The smallest value will be displayed starting by one step.
   * `pattern` `default false` Every second bar gets a different pattern.
+  * `spaced` `default false` Space between bars.
+  * `hideLabels` `default false` Hide / Do not display any labels at the axis.
 
 ## Preview
 
