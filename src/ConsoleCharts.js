@@ -13,7 +13,7 @@ class ConsoleCharts {
                 this.data.push({label: i + 1, value: data[i]});
             }
         }
-	}
+    }
 
     /**
      * It takes an array of numbers or objects with a value property and returns a chart
