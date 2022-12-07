@@ -31,8 +31,8 @@ class `ConsoleCharts` (data `array`)
   * `spaced` `default false` Space between bars.
   * `hideLabels` `default false` Hide / Do not display any labels at the axis.
   * `type` `default "sideways-barchart"` Defines the barchart type. Possible Values are
-    * `sideways-barchart` (horizontal bars)
-    * `barchart` (vertical bars).
+    * `sideways-barchart` (horizontal bars) ![Alt text](./images/bar-chart-horizontal.svg)
+    * `barchart` (vertical bars). ![Alt text](./images/bar-chart.svg)
   
 
 ## Preview
