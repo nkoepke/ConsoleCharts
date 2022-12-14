@@ -14,8 +14,6 @@ class `ConsoleCharts` (data `array`)
 
 #### data `array` of `number` values or of `objects` like `{label: "foo", value: 7}`
 
-* A string of characters. Any full name will be shortened to the first letter of the first two words.
-
 ### Methods
 
 #### sort(order `string`, sortBy `string`)
