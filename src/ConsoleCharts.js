@@ -21,7 +21,7 @@ class ConsoleCharts {
      * @param [options] - An object that contains the following parameters:
      * @returns A string.
      */
-    chart(options){
+    chart(options = {}){
         options.minHeight = options.minHeight || false;
         options.pattern = options.pattern || false;
         options.type = options.type || "sideways-barchart";
