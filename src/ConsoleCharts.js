@@ -98,7 +98,7 @@ class ConsoleCharts {
         else if(options.type === "barchart"){
             // BARCHART
             let spaced = (options.spaced == true ? " " : "");
-            let chart, descX = "";
+            let chart = "", descX = "";
             let maxHeight = Math.max.apply(Math, this.data.map(function(o) { return o.value; }));
             for(let i = 0; i < maxHeight; i++){
                 let ln = "";
