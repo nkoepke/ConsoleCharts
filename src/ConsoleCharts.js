@@ -56,8 +56,7 @@ class ConsoleCharts {
                     lines.push(this.#repeatCharacter(" ", descY - String(i + 1).length) + (i + 1));
                 }
             }
-            let max;
-            let min;
+            let min, max;
             if(typeof this.data[0] === "object"){
                 max = Math.max.apply(Math, this.data.map(function(o) { return o.value + String(o.value).length + 1; }));
                 min = Math.min(...this.data.map(function(o){ return o.value; }));
@@ -99,8 +98,7 @@ class ConsoleCharts {
         else if(options.type === "barchart"){
             // BARCHART
             let spaced = (options.spaced == true ? " " : "");
-            let chart = "";
-            let descX = "";
+            let chart, descX = "";
             let maxHeight = Math.max.apply(Math, this.data.map(function(o) { return o.value; }));
             for(let i = 0; i < maxHeight; i++){
                 let ln = "";
