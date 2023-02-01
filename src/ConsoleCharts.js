@@ -100,17 +100,35 @@ class ConsoleCharts {
             let spaced = (options.spaced == true ? " " : "");
             let chart = "", descX = "";
             let maxHeight = Math.max.apply(Math, this.data.map(function(o) { return o.value; }));
+            let min = Math.min(...this.data.map(function(o){ return o.value; }));
             for(let i = 0; i < maxHeight; i++){
                 let ln = "";
+                if(options.minHeight == true && i == 0){
+                    let lnt = "";
+                    for(let j = 0; j < this.data.length; j++){
+                        lnt += "═" + spaced;
+                    }
+                    chart = " │" + lnt + "\n" + chart;
+                }
                 for(let j = 0; j < this.data.length; j++){
                     if(this.data[j].value > i){
-                        ln += (options.pattern == true && j % 2 ? "▓" + spaced : "█" + spaced);
+                        if(options.minHeight != true){
+                            ln += (options.pattern == true && j % 2 ? "▓" + spaced : "█" + spaced);
+                        }
+                        else{
+                            if(i >= min - 1){
+                                ln += (options.pattern == true && j % 2 ? "▓" + spaced : "█" + spaced);
+                            }
+                        }
                     }
                     else{
                         ln += " " + spaced;
                     }
                 }
-                chart = " │" + ln + "\n" + chart;
+                if(options.minHeight != true || i >= min - 1){
+                    chart = " │" + ln + "\n" + chart;
+                }
+
                 if(options.hideLabels != true){
                     descX += this.#repeatCharacter((options.spaced ? "  " : " "), i + (options.spaced ? 1 : 2)) + this.data[i].label + " (" + this.data[i].value + ")" + "\n";
                 }

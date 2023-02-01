@@ -52,6 +52,7 @@ console.log(ch.chart());
    └───────────
 ```
 
+
 ```js
 let ch = new ConsoleCharts([9, 4, 11, 3, 9, 21, 2, 5]);
 console.log(ch.chart({minHeight: true}));
@@ -69,6 +70,7 @@ console.log(ch.chart({minHeight: true}));
    └─────────────────────
 ```
 
+
 ```js
 let ch = new ConsoleCharts([9, 4, 11, 3, 9, 21, 2, 5]);
 console.log(ch.chart(minHeight: true, pattern: ture));
@@ -85,6 +87,7 @@ console.log(ch.chart(minHeight: true, pattern: ture));
  8 │║▓▓▓▓ 5
    └─────────────────────
 ```
+
 
 ```js
 let obj = new ConsoleCharts([{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}, {label: "Pears", value: 10}, {label: "Grapes", value: 4}, {label: "Pineapples", value: 5}, {label: "Strawberries", value: 12}, {label: "Watermelons", value: 3}, {label: "Mangos", value: 3}, {label: "Lemons", value: 6}, {label: "Limes", value: 4}, {label: "Peaches", value: 10}]);
@@ -106,6 +109,7 @@ Strawberries │████████████ 12
      Peaches │▓▓▓▓▓▓▓▓▓▓ 10
              └───────────────
 ```
+
 
 ```js
 let obj = new ConsoleCharts([{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}, {label: "Pears", value: 10}, {label: "Grapes", value: 4}, {label: "Pineapples", value: 5}, {label: "Strawberries", value: 12}, {label: "Watermelons", value: 3}, {label: "Mangos", value: 3}, {label: "Lemons", value: 6}, {label: "Limes", value: 4}, {label: "Peaches", value: 10}]);
@@ -129,6 +133,7 @@ Strawberries │▓▓▓▓▓▓▓▓▓▓▓▓ 12
              └───────────────
 ```
 
+
 ```js
 let obj = new ConsoleCharts([{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}, {label: "Pears", value: 10}, {label: "Grapes", value: 4}, {label: "Pineapples", value: 5}, {label: "Strawberries", value: 12}, {label: "Watermelons", value: 3}, {label: "Mangos", value: 3}, {label: "Lemons", value: 6}, {label: "Limes", value: 4}, {label: "Peaches", value: 10}]);
 console.log(obj.sort("ASC", "value").chart({ pattern: true }));
@@ -150,8 +155,7 @@ Strawberries │▓▓▓▓▓▓▓▓▓▓▓▓ 12
              └───────────────
 ```
 
-## Work in progress
-* Regular barcharts -> usable but not fully ready. Some features are missing!
+
 ```js
 let obj = new ConsoleCharts([{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}, {label: "Pears", value: 10}, {label: "Grapes", value: 4}, {label: "Pineapples", value: 5}, {label: "Strawberries", value: 12}, {label: "Watermelons", value: 3}, {label: "Mangos", value: 3}, {label: "Lemons", value: 6}, {label: "Limes", value: 4}, {label: "Peaches", value: 10}]);
 console.log(obj.chart({ type: "barchart", spaced: true, pattern: true}));
@@ -183,4 +187,24 @@ console.log(obj.chart({ type: "barchart", spaced: true, pattern: true}));
                     Lemons (6)
                       Limes (4)
                         Peaches (10)
+```
+
+
+```js
+let objV = new ConsoleCharts([{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}, {label: "Pears", value: 10}, {label: "Grapes", value: 4}, {label: "Pineapples", value: 5}, {label: "Strawberries", value: 12}, {label: "Watermelons", value: 11}, {label: "Mangos", value: 10}, {label: "Lemons", value: 6}, {label: "Limes", value: 4}, {label: "Peaches", value: 10}]);
+console.log(objV.chart({ type: "barchart", spaced: true, pattern: true, hideLabels: true, minHeight: true}));
+```
+
+```
+ │            █           
+ │            █ ▓         
+ │      ▓     █ ▓ █     ▓ 
+ │      ▓     █ ▓ █     ▓ 
+ │    █ ▓     █ ▓ █     ▓ 
+ │  ▓ █ ▓     █ ▓ █     ▓ 
+ │  ▓ █ ▓     █ ▓ █ ▓   ▓ 
+ │█ ▓ █ ▓   ▓ █ ▓ █ ▓   ▓ 
+ │█ ▓ █ ▓ █ ▓ █ ▓ █ ▓ █ ▓ 
+ │═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ ═ 
+ └────────────────────────
 ```
