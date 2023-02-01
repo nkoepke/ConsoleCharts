@@ -112,13 +112,8 @@ class ConsoleCharts {
                 }
                 for(let j = 0; j < this.data.length; j++){
                     if(this.data[j].value > i){
-                        if(options.minHeight != true){
+                        if(options.minHeight != true || i >= min - 1){
                             ln += (options.pattern == true && j % 2 ? "▓" + spaced : "█" + spaced);
-                        }
-                        else{
-                            if(i >= min - 1){
-                                ln += (options.pattern == true && j % 2 ? "▓" + spaced : "█" + spaced);
-                            }
                         }
                     }
                     else{
