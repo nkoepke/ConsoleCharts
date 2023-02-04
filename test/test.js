@@ -11,3 +11,5 @@ console.log(obj.chart({ pattern: true, spaced: true, hideLabels: true}));
 let objV = new ConsoleCharts([{label: "Apples", value: 5}, {label: "Oranges", value: 7}, {label: "Bananas", value: 8}, {label: "Pears", value: 10}, {label: "Grapes", value: 4}, {label: "Pineapples", value: 5}, {label: "Strawberries", value: 12}, {label: "Watermelons", value: 11}, {label: "Mangos", value: 10}, {label: "Lemons", value: 6}, {label: "Limes", value: 4}, {label: "Peaches", value: 10}]);
 console.log(objV.chart({ type: "barchart", spaced: true, pattern: true, hideLabels: true, minHeight: true}));
 console.log(objV.chart({ type: "barchart", spaced: false, pattern: true, hideLabels: false, minHeight: false}));
+console.log(objV.sort("DESC", "value").chart({ type: "barchart", spaced: false, pattern: true, hideLabels: true, minHeight: true}));
+//console.table(objV.sort("DESC", "value").dataToArray("label"));

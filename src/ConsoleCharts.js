@@ -4,11 +4,15 @@ class ConsoleCharts {
      * @param data - The data to be used for the chart. Array of numbers or array of objects with a label and value property.
      */
     constructor(data){
-        this.data = [];
+        // Properties
+        this.data = [];     // It's an array of objects with a label and value property.
+
+        // Processing data
         if(typeof data[0] === "object"){
             this.data = data;
         }
         else{
+            this.array = data;
             for (let i = 0; i < data.length; i++) {
                 this.data.push({label: i + 1, value: data[i]});
             }
@@ -159,6 +163,19 @@ class ConsoleCharts {
             });
         }
         return this; // Allowing calls chains
+    }
+
+    /**
+     * converts the data array to a normal array
+     * @param property - The property of the data array to convert to an array. Default is "value".
+     * @returns array of the values of the data array
+     */
+    dataToArray(property = "value"){
+        let arr = [];
+        for(let i = 0; i < this.data.length; i++){
+            arr.push(this.data[i][property]);
+        }
+        return arr;
     }
 
     /**
