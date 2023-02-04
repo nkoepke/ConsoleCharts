@@ -20,7 +20,7 @@ class `ConsoleCharts` (data `array`)
 * Sorts the array of objects.
 * Param `order` can be set to "ASC" or "DESC". Default "ASC"
 * Param `sortBy` can be set to "label" or "value", so that you can order either by the values or the label. (If `number`, then numeric. If `string`, then by the first character.) Default "value"
-* `return` `ConsoleCharts`
+* return `ConsoleCharts`
 
 #### chart(options [optional] `object`)
 * Returns multiline string with a vertical bar chart
@@ -32,7 +32,7 @@ class `ConsoleCharts` (data `array`)
   * `type` `default "sideways-barchart"` Defines the barchart type. Possible Values are:
     * `sideways-barchart` (horizontal bars) ![Alt text](./images/bar-chart-horizontal.svg)
     * `barchart` (vertical bars). ![Alt text](./images/bar-chart.svg)
-* `return` `string`
+* return `string`
 
 ### Helper Methods
 
@@ -40,7 +40,7 @@ class `ConsoleCharts` (data `array`)
 * Converts the data array to a normal array
 * To enable reuse of charted data
 * Param `property` is optional. It can be "value" or "label". Default "value"
-* `return` `array`
+* return `array`
   
 
 ## Preview
