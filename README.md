@@ -83,7 +83,7 @@ console.log(ch.chart({minHeight: true}));
 
 ```js
 let ch = new ConsoleCharts([9, 4, 11, 3, 9, 21, 2, 5]);
-console.log(ch.chart(minHeight: true, pattern: ture));
+console.log(ch.chart(minHeight: true, pattern: true));
 ```
 
 ```
